@@ -1,3 +1,11 @@
+:root {
+  --main-color: #db7734;
+  --secondary-color: #a65b28;
+  --secondary-color-dark: #733f1c;
+  --text-color-dark: #292929;
+  --text-color-light: #fff;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -18,7 +26,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #292929;
+  color: var(--text-color-dark);
   margin-bottom: 30px;
 }
 
@@ -50,8 +58,8 @@ label {
 
 .filter-buttons button {
   padding: 8px 12px;
-  background-color: #db7734;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--text-color-light);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -59,8 +67,12 @@ label {
 }
 
 .filter-buttons button:hover {
-  background-color: #a65b28;
+  background-color: var(--secondary-color);
 }
+.filter-buttons button.active {
+  background-color: var(--secondary-color-dark);
+}
+
 
 #user-list {
   display: grid;
@@ -83,15 +95,15 @@ label {
 
 .user-card h2 {
   margin-top: 0;
-  color: #292929;
-  border-bottom: 2px solid #db7734;
+  color: var(--text-color-dark);
+  border-bottom: 2px solid var(--main-color);
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
 
 .user-card p {
   margin: 10px 0;
-  color: #292929;
+  color: var(--text-color-dark);
 }
 
 @media (max-width: 600px) {
