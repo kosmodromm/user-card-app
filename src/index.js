@@ -1,6 +1,6 @@
-import { API } from './API.js';
-import { UserList } from './UserList.js';
-import { debounce } from './utils.js';
+import { API } from './api/API.js';
+import { UserList } from './components/UserList.js';
+import { debounce } from './utils/utils.js';
 import './styles.css';
 
 async function init() {
