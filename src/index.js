@@ -4,7 +4,8 @@ import { debounce } from './utils.js';
 import './styles.css';
 
 async function init() {
-  const users = await API.getUsers();
+  const api = new API();
+  const users = await api.getUsers();
   const userList = new UserList(users);
   userList.render();
   userList.createFilterButtons();
