@@ -1,13 +1,26 @@
 export class API {
-  static USERS_ENDPOINT  = 'https://jsonplaceholder.typicode.com/users';
+  constructor(baseUrl = 'https://jsonplaceholder.typicode.com') {
+    this._baseUrl = baseUrl;
+    this._endpoints = {
+      users: `${this._baseUrl}/users`
+    };
+  }
 
-  static async getUsers() {
+  async _fetchData(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  }
+
+  async getUsers() {
     try {
-      const response = await fetch(this.USERS_ENDPOINT);
-      return await response.json();
+      return await this._fetchData(this._endpoints.users);
     } catch (error) {
       console.error('Error fetching users:', error);
-      return [];
+      throw error;
     }
   }
 }
+
