@@ -24,7 +24,7 @@ Note: The project is implemented without using any frameworks or libraries.
 
 1. Clone the repository:
    ```
-   git clone [URL вашего репозитория]
+   git clone https://github.com/kosmodromm/user-card-app.git
    ```
 2. Navigate to the project directory:
    ```
@@ -39,7 +39,7 @@ Note: The project is implemented without using any frameworks or libraries.
 
 - To run in development mode:
   ```
-  npm start
+  npm run start
   ```
   This will start the application at `http://localhost:9000`.
 

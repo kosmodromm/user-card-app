@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: './src/index.js',
@@ -19,6 +20,18 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
     compress: true,
-    port: 9000,
+    port: 9001,
+    allowedHosts: 'auto',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'User Card Application',
+      template: './src/index.html',
+      inject: 'body',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
+  ],
 };

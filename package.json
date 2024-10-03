@@ -4,14 +4,19 @@
   "description": "User card application",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack serve --mode development"
+    "build": "npm run build:win && npm run build:unix",
+    "build:win": "set NODE_ENV=production&& webpack --mode production",
+    "build:unix": "NODE_ENV=production webpack --mode production",
+    "start": "npm run start:win && npm run start:unix",
+    "start:win": "set NODE_ENV=development&& webpack serve --mode development",
+    "start:unix": "NODE_ENV=development webpack serve --mode development"
   },
   "devDependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.3",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1",
-    "css-loader": "^6.8.1",
-    "style-loader": "^3.3.3"
+    "webpack-dev-server": "^4.15.1"
   }
 }
