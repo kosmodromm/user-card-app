@@ -6,7 +6,7 @@ User Card App is a web application that retrieves a list of users from the API a
 
 ## Main Functions
 
-- Пretrieving the list of users from the endpoint https://jsonplaceholder.typicode.com/users
+- Retrieving the list of users from the endpoint https://jsonplaceholder.typicode.com/users
 - Displaying the list of users as cards
 - Filtering cards by any property from the user description
 - Adaptive layout for correct display on all screen sizes
@@ -41,7 +41,7 @@ Note: The project is implemented without using any frameworks or libraries.
   ```
   npm run start
   ```
-  This will start the application at `http://localhost:9000`.
+  This will start the application at `http://localhost:9001`.
 
 - To build a production version:
   ```
